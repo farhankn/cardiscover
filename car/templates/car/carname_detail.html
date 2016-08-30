@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'car_carname_list' %}">carName Listing</a></p>
+<table class="table">
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+<tr><td>Manufacturer</td><td>{{ object.Manufacturer }}</td></tr>
+<tr><td>Price</td><td>{{ object.Price }}</td></tr>
+<tr><td>mileage</td><td>{{ object.mileage }}</td></tr>
+<tr><td>engine</td><td>{{ object.engine }}</td></tr>
+<tr><td>power</td><td>{{ object.power }}</td></tr>
+<tr><td>description</td><td>{{ object.description }}</td></tr>
+<tr><td>cardheko</td><td>{{ object.cardheko }}</td></tr>
+<tr><td>cartrade</td><td>{{ object.cartrade }}</td></tr>
+<tr><td>youtubeurl</td><td>{{ object.youtubeurl }}</td></tr>
+<tr><td>imageUrl</td><td>{{ object.imageUrl }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit carName</a>
+
+{% endblock %}

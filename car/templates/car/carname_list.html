@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'car_carname_list' %}">carName Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>name</td>
+    <td>slug</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>Manufacturer</td>
+    <td>Price</td>
+    <td>mileage</td>
+    <td>engine</td>
+    <td>power</td>
+    <td>description</td>
+    <td>cardheko</td>
+    <td>cartrade</td>
+    <td>youtubeurl</td>
+    <td>imageUrl</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.id}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.name }}</td>
+    <td>{{ object.slug }}</td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.Manufacturer }}</td>
+    <td>{{ object.Price }}</td>
+    <td>{{ object.mileage }}</td>
+    <td>{{ object.engine }}</td>
+    <td>{{ object.power }}</td>
+    <td>{{ object.description }}</td>
+    <td>{{ object.cardheko }}</td>
+    <td>{{ object.cartrade }}</td>
+    <td>{{ object.youtubeurl }}</td>
+    <td>{{ object.imageUrl }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'car_carname_create' %}">Create new carName</a>
+{% endblock %}
