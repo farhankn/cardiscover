@@ -1,6 +1,14 @@
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from .models import carName, Manufacturer
 from .forms import carNameForm, ManufacturerForm
+from django.shortcuts import render
+
+
+def cardetails(request, num=None):
+    instance = carName.objects.get(id = num)
+    context = {
+     "car" : instance,}
+    return render(request,"carview.html",context) 
 
 
 class carNameListView(ListView):
