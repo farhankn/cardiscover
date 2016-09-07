@@ -22,6 +22,7 @@ class carName(models.Model):
     power = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField(max_length=1000)
     fueltype = models.CharField(max_length=10)
+    bodytype = models.CharField(max_length=10)
     cardheko = models.CharField(max_length=100)
     cartrade = models.CharField(max_length=100)
     youtubeurl = models.CharField(max_length=50)

@@ -21,6 +21,7 @@ urlpatterns += patterns('',
     url(r'^update/(?P<slug>\S+)/$', views.carNameUpdateView.as_view(), name='car_carname_update'),
     url(r'^carname/(?P<num>[0-9]+)/$', views.cardetails),
     url(r'^compare/(?P<num1>[0-9]+)/(?P<num2>[0-9]+)/$', views.compare),
+    url(r'^cargrid/$', views.cargrid, ),
 )
 
 urlpatterns += patterns('',

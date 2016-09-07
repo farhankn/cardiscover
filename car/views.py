@@ -1,7 +1,10 @@
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from .models import carName, Manufacturer
 from .forms import carNameForm, ManufacturerForm
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
+
+def index(request):
+    return render_to_response('index.html')
 
 
 def cardetails(request, num=None):
@@ -9,6 +12,14 @@ def cardetails(request, num=None):
     context = {
      "car" : instance,}
     return render(request,"carview.html",context) 
+
+
+def cargrid(request):
+    instance = carName.objects.all()
+    context = {
+     "cars" : instance,}
+    return render(request,"grid.html",context) 
+
 
 
 def compare(request, num1=None, num2=None):

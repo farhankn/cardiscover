@@ -1,0 +1,188 @@
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+
+  <!--*******************BOOTSTRAP********************************-->
+<script> src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="custom.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!--*******************NAVBAR********************************-->
+
+  <nav class="navbar navbar-default navbar-fixed-top boxshadowout">
+    <div class="container">
+      <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <div>CarFinder <span> <img src="{{STATIC_URL}}images/car.gif" height="30px"></span></div>
+
+
+            </a>
+          </div>
+    </div>
+  </nav>
+  <!--*******************SLIDER********************************-->
+
+<div class="container-fluid" id="topbar">
+  <center>
+    <div style="width:50%;">
+<div class="row">
+<div class="col-sm-10" style="padding:0;">
+  <input type="text" name="search">
+</div>
+<div class="col-sm-2" style="padding-top:6px;">
+  <input type="button" class="btn btn-default custbut" value="Search" style="border-radius:0;">
+</div>
+
+</div>
+  </center>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container boxshadowout" id="maincont" style="background-color:white;height:400px;margin-top:-40px;padding-left:0;padding-right:0;">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://images.cardekho.com/images/newcarimg/ameo-center-1.jpg" alt="Chania" height="100%">
+        <div class="carousel-caption">
+          <h1>Featured</h1>
+          <h2>Volkswagon Ameo.</h2>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+<br><br><br>
+<!--*******************CONTENT********************************-->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-1"></div>
+<div class="col-sm-5" style="padding:30px;">
+  <center>
+<h2>About Us</h2></center>
+Malis laudem adipisci per ea, ea doming patrioque eum. Ut duo wisi persecuti. Id delenit praesent eam. Putant animal his ut. Cum ut periculis referrentur efficiantur, sed affert partiendo percipitur ne, vim molestie principes honestatis ex. Pro ad iusto ancillae, te est diam nullam. At nec erat autem facilisis.
+
+Graeco officiis volutpat no sit, brute viris explicari vim id. Nisl similique usu ne. Vivamus consequat feugiat viverra. In nunc erat, convallis in viverra ac, placerat semper enim.
+
+Mauris euismod lectus sed arcu ultrices egestas. Integer tempus posuere luctus.
+Ut at malesuada mi. Integer mattis aliquet varius.
+
+</div>
+  <div class="col-sm-1"></div>
+
+<div class="col-sm-4" id="finder">
+<center>
+  <h2>
+Find Your Car..</h2>
+<hr>
+</center>
+<form>
+<div class="form-group">
+      <label for="sel1">Brand:</label>
+      <select class="form-control" id="sel1">
+        <option>All</option>
+        <option>Audi</option>
+        <option>BMW</option>
+        <option>Mercides Benz</option>
+      </select>
+</div>
+<div class="form-group">
+      <label for="sel1">Model:</label>
+      <select class="form-control" id="sel1">
+        <option>All</option>
+        <option>Audi</option>
+        <option>BMW</option>
+        <option>Mercides Benz</option>
+      </select>
+</div>
+<div data-role="rangeslider">
+       <label for="price-min">Price:</label>
+       <input type="range" name="price-min" id="price-min" value="20" min="0" max="99">
+       <label for="price-max">Price:</label>
+       <input type="range" name="price-max" id="price-max" value="80" min="0" max="99">
+     </div>
+  <center>
+       <input type="submit" class="btn btn-primary custbut btn-md" data-inline="true" value="Submit">
+</center>
+</form>
+
+
+</div>
+<div class="col-sm-1"></div>
+</div>
+
+</div>
+<br><br><br><br>
+<div style="background-color:grey;" id="typearray">
+<div class="container">
+<h4>&nbsp;Our Collection</h4>
+  <hr>
+<div class="row" style="background-color:grey;padding-top:10px;">
+  <center>
+  <div class="col-sm-3" >
+    <div style="background-color:green;margin:10px;" class="boxrad"><img src="car.png" width="100"></div>
+
+  </div>
+    <div class="col-sm-3">
+    <div style="background-color:yellow;margin:10px;" class="boxrad"><img src="car.png" width="100"></div>
+    </div>
+    <div class="col-sm-3">
+      <div style="background-color:pink;margin:10px;" class="boxrad"><img src="car.png" width="100"></div>
+    </div>
+    <div class="col-sm-3">
+    <div style="background-color:purple;margin:10px;" class="boxrad"><img src="car.png" width="100"></div>
+    </div>
+  </center>
+</div>
+</div>
+</div>
+<br><br><br><br><br>
+
+<!--*******************FOOTER********************************-->
+<div class="container-fluid" style="background-color:black;width:100%;">
+  footer
+</div>
+</body>
+<html>

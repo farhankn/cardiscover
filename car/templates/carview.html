@@ -1,6 +1,84 @@
 <html>
+<head>
 
-<body>
+
+	<link rel="stylesheet" href="style.css">
+	<script> src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="custom.js"></script>
+
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	  <!-- Optional theme -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	  <!-- Latest compiled and minified JavaScript -->
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body style="padding-top:80px;">
+	<!--*******************NAVBAR********************************-->
+
+  <nav class="navbar navbar-default navbar-fixed-top boxshadowout">
+    <div class="container">
+      <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <div>CarFinder <span> <img src="car.gif" height="30px"></span></div>
+            </a>
+          </div>
+    </div>
+  </nav>
+<div class="container">
+<div class="row" style="padding:50px;">
+
+<div class="col-sm-4" id="itembox">
+<center>
+<img src="{{car.imageUrl}}" width="100%">
+</center>
+</div>
+<div class="col-sm-8" style="padding-left:50px;">
+<h3>{{ car.name }}</h3>
+<h4> <b>Price: </b>{{ car.Price }}</h4>
+<br>
+{{ car.description }}
+<br><br>
+<b>
+	<div class="row">
+		<div class="col-sm-3">
+			Milage<br>{{ car.mileage }}
+		</div>
+<div class="col-sm-3">
+	Manufacturer<br> {{ car.Manufacturer }}
+</div>
+<div class="col-sm-3">
+	Horse Power<br> {{ car.power }}Bhp
+
+</div>
+<div class="col-sm-3">
+	Engine<br>{{ car.engine }}L
+
+</div>
+
+</div>
+</b>
+</div>
+</div>
+<div class="row" style="padding:50px;background-color:grey;">
+<div class="col-sm-6">
+<pre id="myCode"></pre>
+</div>
+<param name="vid" value="{{ car.youtubeurl }}">
+</div>
+</div>
+
+
+
+
+
+
+<!--
 <table>
 Name	{{ car.name }}<br/>
 Slug	{{ car.slug }}<br/>
@@ -17,6 +95,28 @@ Description	{{ car.description }}<br/>
 	<a href="{{ car.cartrade }}">cartrade</a><br/>
 youtubeurl	{{ car.youtubeurl }}<br/>
 imageUrl:<img src="{{car.imageUrl}}"><br/>
-<table>
+<table> -->
+
+<script>
+function getId(url) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+        return match[2];
+    } else {
+        return 'error';
+    }
+}
+
+var myId = getId('vid');
+
+$('#myId').html(myId);
+
+$('#myCode').html('<iframe width="100%" height="300" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe>');
+</script>
+
+
+
 </body>
 </html>
