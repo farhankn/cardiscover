@@ -15,9 +15,8 @@ def compare(request, num1=None, num2=None):
     instance1 = carName.objects.get(id = num1)
     instance2 = carName.objects.get(id = num2)
     context = {
-     "car1" : instance1,
-     "car2" : instance2,	}
-    return render(request,"compare.html",context) 
+     "car" : instance1,}
+    return render(request,"carview.html",context) 
 
 
 class carNameListView(ListView):

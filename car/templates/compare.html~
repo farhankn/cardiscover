@@ -1,0 +1,43 @@
+<html>
+
+<body>
+<table>
+Name	{{ car.name }}<br/>
+Slug	{{ car.slug }}<br/>
+Created	{{ car.created }}<br/>
+Last_updated	{{ car.last_updated }}<br/>
+Manufacturer	{{ car.Manufacturer }}<br/>
+Price	{{ car.Price }}<br/>
+Mileage	{{ car.mileage }}<br/>
+Engine	{{ car.engine }}<br/>
+Power	{{ car.power }}<br/>
+
+Description	{{ car.description }}<br/>
+	<a href="{{ car.cardheko }}">cardheko</a><br/>
+	<a href="{{ car.cartrade }}">cartrade</a><br/>
+youtubeurl	{{ car.youtubeurl }}<br/>
+imageUrl:<img src="{{car.imageUrl}}"><br/>
+<table>
+
+<br><br><br><br><br><br><br>
+
+
+<table>
+Name	{{ car.name }}<br/>
+Slug	{{ car.slug }}<br/>
+Created	{{ car.created }}<br/>
+Last_updated	{{ car.last_updated }}<br/>
+Manufacturer	{{ car.Manufacturer }}<br/>
+Price	{{ car.Price }}<br/>
+Mileage	{{ car.mileage }}<br/>
+Engine	{{ car.engine }}<br/>
+Power	{{ car.power }}<br/>
+
+Description	{{ car.description }}<br/>
+	<a href="{{ car.cardheko }}">cardheko</a><br/>
+	<a href="{{ car.cartrade }}">cartrade</a><br/>
+youtubeurl	{{ car.youtubeurl }}<br/>
+imageUrl:<img src="{{car.imageUrl}}"><br/>
+<table>
+</body>
+</html>
