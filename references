@@ -1,1 +1,5 @@
 mmcardle.github.io/django_builder/#/models
+
+pip install --upgrade django-crispy-forms
+pip install django-extensions
+pip install djangorestframework
