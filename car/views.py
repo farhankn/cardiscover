@@ -21,8 +21,22 @@ def cargrid(request):
     return render(request,"grid.html",context) 
 
 
+def compare1(request):
+    instance = carName.objects.all()
+    context = {
+     "cars" : instance,}
+    return render(request,"compare1.html",context)
 
-def compare(request, num1=None, num2=None):
+def compare2(request, num1 = None):
+    instance = carName.objects.all()
+    instance1 = carName.objects.get(id = num1)
+    context = {
+     "select" : instance1,
+     "cars" : instance,}
+    return render(request,"compare2.html",context) 
+
+
+def compareresult(request, num1=None, num2=None):
     instance1 = carName.objects.get(id = num1)
     instance2 = carName.objects.get(id = num2)
     context = {

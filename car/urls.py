@@ -15,13 +15,15 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('',
     # urls for carName
-    url(r'^$', views.carNameListView.as_view(), name='car_carname_list'),
+    url(r'^carlist/$', views.carNameListView.as_view(), name='car_carname_list'),
     url(r'^create/$', views.carNameCreateView.as_view(), name='car_carname_create'),
     url(r'^detail/(?P<slug>\S+)/$', views.carNameDetailView.as_view(), name='car_carname_detail'),
     url(r'^update/(?P<slug>\S+)/$', views.carNameUpdateView.as_view(), name='car_carname_update'),
     url(r'^carname/(?P<num>[0-9]+)/$', views.cardetails),
-    url(r'^compare/(?P<num1>[0-9]+)/(?P<num2>[0-9]+)/$', views.compare),
-    url(r'^cargrid/$', views.cargrid, ),
+    url(r'^compare/$', views.compare1),
+    url(r'^compare/(?P<num1>[0-9]+)/$', views.compare2),
+    url(r'^compare/(?P<num1>[0-9]+)/(?P<num2>[0-9]+)/$', views.compareresult),
+    url(r'^$', views.cargrid, ),
 )
 
 urlpatterns += patterns('',
