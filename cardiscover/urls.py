@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from django.views.generic.base import TemplateView
-
+from car.views import index
+from search.views import msearch
 urlpatterns = [
-    url(r'^$', 'car.views.index'),                   
-    url(r'^search/', include('search.urls')),
+    url(r'^$', index),                   
+    url(r'^search/', include("search.urls", namespace='search')),
+    url(r'^msearch/', msearch),
     url(r'^car/', include('car.urls')),
     url(r'^admin/', admin.site.urls),
    ]

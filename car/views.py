@@ -4,7 +4,13 @@ from .forms import carNameForm, ManufacturerForm
 from django.shortcuts import render,render_to_response
 
 def index(request):
-    return render_to_response('index.html')
+
+    brand = Manufacturer.objects.all()
+    context = { 
+                'brand': brand, 
+            }
+    return render(request,"index.html",context)
+                              
 
 
 def cardetails(request, num=None):
