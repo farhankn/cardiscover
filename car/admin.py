@@ -13,6 +13,8 @@ class carNameAdmin(admin.ModelAdmin):
     form = carNameAdminForm
     list_display = ['name', 'slug', 'created', 'last_updated', 'Manufacturer', 'Price', 'mileage', 'engine', 'power', 'description', 'cardheko', 'cartrade', 'youtubeurl', 'imageUrl']
     readonly_fields = ['name', 'slug', 'created', 'last_updated', 'Manufacturer', 'Price', 'mileage', 'engine', 'power', 'description', 'cardheko', 'cartrade', 'youtubeurl', 'imageUrl']
+    class Meta:
+        model = carName
 
 admin.site.register(carName, carNameAdmin)
 
@@ -27,7 +29,11 @@ class ManufacturerAdminForm(forms.ModelForm):
 class ManufacturerAdmin(admin.ModelAdmin):
     form = ManufacturerAdminForm
     list_display = ['name', 'slug', 'created', 'last_updated']
-    readonly_fields = ['name', 'slug', 'created', 'last_updated']
+    #readonly_fields = ['name', 'slug', 'created', 'last_updated']
+    list_editable = ['name']
+    search_fields =  ['name']
+class Meta:
+        model = Manufacturer
 
 admin.site.register(Manufacturer, ManufacturerAdmin)
 
