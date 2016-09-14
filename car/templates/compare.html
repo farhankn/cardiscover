@@ -1,43 +1,195 @@
 <html>
+<head>
 
-<body>
-<table>
-Name	{{ car1.name }}<br/>
-Slug	{{ car1.slug }}<br/>
-Created	{{ car1.created }}<br/>
-Last_updated	{{ car1.last_updated }}<br/>
-Manufacturer	{{ car1.Manufacturer }}<br/>
-Price	{{ car1.Price }}<br/>
-Mileage	{{ car1.mileage }}<br/>
-Engine	{{ car1.engine }}<br/>
-Power	{{ car1.power }}<br/>
-
-Description	{{ car1.description }}<br/>
-	<a href="{{ car1.cardheko }}">cardheko</a><br/>
-	<a href="{{ car1.cartrade }}">cartrade</a><br/>
-youtubeurl	{{ car1.youtubeurl }}<br/>
-imageUrl:<img src="{{car1.imageUrl}}"><br/>
-<table>
-
-<br><br><br><br><br><br><br>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<table>
-Name	{{ car2.name }}<br/>
-Slug	{{ car2.slug }}<br/>
-Created	{{ car2.created }}<br/>
-Last_updated	{{ car2.last_updated }}<br/>
-Manufacturer	{{ car2.Manufacturer }}<br/>
-Price	{{ car2.Price }}<br/>
-Mileage	{{ car2.mileage }}<br/>
-Engine	{{ car2.engine }}<br/>
-Power	{{ car2.power }}<br/>
 
-Description	{{ car2.description }}<br/>
-	<a href="{{ car2.cardheko }}">cardheko</a><br/>
-	<a href="{{ car2.cartrade }}">cartrade</a><br/>
-youtubeurl	{{ car2.youtubeurl }}<br/>
-imageUrl:<img src="{{car2.imageUrl}}"><br/>
-<table>
+
+
+
+  <!--*******************BOOTSTRAP********************************-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+<script src="custom.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="style.css">
+<style>
+
+      * {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+}h1 {
+  text-align: center;
+}
+
+
+
+table {
+      background-color: #141212;
+  width: 75%;
+      border-radius: 5px;
+      border: solid 3px #141212;
+      -moz-box-shadow:     0 0 10px #000000;
+      -webkit-box-shadow:  0 0 10px #000000;
+      box-shadow:          0 0 10px #000000;
+
+}
+
+td,
+th {
+  text-align: center;
+background-color:  #141212;
+  font-size: 18px;
+  padding: 6px;
+  word-wrap: break-word;
+      border: solid 2px black;
+}
+
+td {
+  color: white;
+  font-weight: bold;
+}
+
+.check {
+  color: limegreen;
+  font-size: 30px;
+}
+
+th:first-child,
+td:first-child {
+  font-weight: bold;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .check {
+    color: limegreen;
+    font-size: 20px;
+  }
+  tr {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+
+  }
+  td,
+  th {
+    display: block;
+    width: 50%;
+    font-size: 20px;
+  }
+  th:first-child,
+  td:first-child {
+    background: black;
+    width: 100%;
+      color: white;
+  }
+  th:first-child {
+    display: none;
+  }
+}
+
+.p {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 130px;
+}
+#feature
+{
+
+      background: black;
+      color: white;
+}
+#ccar
+{
+box-shadow: inset 0 -9px 8px -7px #000000;
+      background: white;
+      border: black;
+}
+</style>
+
+
+
+</head>
+<body><center>
+    <table style="padding:50px">
+      <div>
+	  <thead>
+	        <tr>
+		        <th id="feature">Features</th>
+			      <th id="ccar"> <img src="{{car2.imageUrl}}" width="100%">{{ car1.name }}</th>
+			            <th id="ccar"> <img src="{{car2.imageUrl}}" width="100%">{{ car2.name }}</th>
+				        </tr>
+		  </thead>
+	    <tbody>
+	          <tr>
+		          <td id="feature">Price</td>
+			        <td>{{ car1.Price }}</td>
+				      <td>{{ car2.Price }}</td>
+				          </tr>
+		      <tr>
+			      <td id="feature">Manufacturer</td>
+			            <td>{{ car1.Manufacturer }}</td>
+				          <td>{{ car2.Manufacturer }}</td>
+
+					      </tr>
+		          <tr>
+			          <td id="feature">Mileage</td>
+				        <td>{{ car1.mileage }} Kms</td>
+					      <td>{{ car2.mileage }} Kms</td>
+
+					          </tr>
+			      <tr>
+				      <td id="feature">Realese Date</td>
+				            <td>{{ car1.created }}</td>
+					          <td>{{ car2.created }}</td>
+
+						      </tr>
+
+			      <tr>
+				<td id="feature">Upadte Date</td>
+				<td>{{ car1.last_updated }}</td>
+				<td>{{ car2.last_updated }}</td>
+				</tr>
+			      <tr>
+				<td id="feature">Engine</td>
+				<td>{{ car1.engine }} L</td>
+				<td>{{ car2.engine }} L</td>
+				</tr>
+			      <tr>
+				<td id="feature">Power</td>
+				<td>{{ car1.power }}</td>
+				<td>{{ car2.power }}</td>
+				</tr>
+			        </tbody>
+	    <div>
+	      </table>
 </body>
 </html>
