@@ -23,6 +23,8 @@ urlpatterns += patterns('',
     url(r'^compare/$', views.compare1),
     url(r'^compare/(?P<num1>[0-9]+)/$', views.compare2),
     url(r'^compare/(?P<num1>[0-9]+)/(?P<num2>[0-9]+)/$', views.compareresult),
+    url(r'^about/$', views.about),
+    url(r'^guide/$', views.guide),
     url(r'^$', views.cargrid, ),
 )
 

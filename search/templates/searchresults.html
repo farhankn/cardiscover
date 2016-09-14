@@ -1,11 +1,9 @@
-<h1> Result </h1>
-
-{{ cars.carName }}
- {% for car in cars %}
-<div class="col-sm-3" id="itembox">
+<h1> Results</h1>
 <center>
-<img src="{{car.imageUrl}}" >
-<h3>{{ car.name }}</h3>
-<h4> <b>Price: </b>{{ car.Price }}</h4>
-</center></div>
-  {% endfor %}
+//{{ cars.carName }}
+{% for obj in found_entries %}
+       <img src="{{ obj.imageUrl }}">
+      	<h3><a href='{{ obj.get_absolute_url }}'>{{ obj.name }}</a></h3>
+        Price:      Rs. {{ obj.Price }}<br/>
+{% endfor %}
+</center>
