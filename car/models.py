@@ -11,7 +11,7 @@ from django_extensions.db import fields as extension_fields
 class carName(models.Model):
 
     # Fields
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255,null=True)
     slug = extension_fields.AutoSlugField(populate_from='name', blank=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -20,13 +20,14 @@ class carName(models.Model):
     mileage = models.DecimalField(max_digits=10, decimal_places=2)
     engine = models.DecimalField(max_digits=10, decimal_places=2)
     power = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.TextField(max_length=1000)
-    fueltype = models.CharField(max_length=10)
-    bodytype = models.CharField(max_length=10)
-    cardheko = models.CharField(max_length=100)
-    cartrade = models.CharField(max_length=100)
-    youtubeurl = models.CharField(max_length=50)
-    imageUrl = models.CharField(max_length=150)
+    description = models.TextField(max_length=255)
+    fueltype = models.TextField(max_length=100,null=True)
+    bodytype = models.TextField(max_length=100,null=True)
+    cardheko = models.TextField(max_length=100,null=True)
+    cartrade = models.TextField(max_length=100,null=True)
+    youtubeurl = models.TextField(max_length=100,null=True)
+    imageUrl = models.TextField(max_length=150,null=True)
+
 
 
     class Meta:
