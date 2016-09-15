@@ -29,7 +29,7 @@
               <div>BLACK GARAGE<span></span></div>
             </a>
           </div>
-	
+
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
@@ -37,7 +37,7 @@
         <li><a href="/car/compare/">Compare</a></li>
 	<li><a href="/car/about/">About</a></li>
         <li><a href="/car/guide/">Buying Guide</a></li>
-	
+
       </ul>
 	</div>
 
@@ -63,6 +63,9 @@
       <center>
 <img src="{{car.imageUrl}}" width="100%"">
 <h3>{{ car.name }}</h3>
+<h4>
+<a href = "/car/carname/{{ car.id }}/"> View </a> | <a href = "/car/compare/{{ car.id }}/"> Compare </a>
+<h4>
 <h4> <b>Price: </b>{{ car.Price }}</h4>
 </center>
  </div>
