@@ -22,8 +22,8 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
 <style>
 
       * {
@@ -133,18 +133,58 @@ box-shadow: inset 0 -9px 8px -7px #000000;
       background: white;
       border: black;
 }
+
+
+
+.navbar
+{
+  border: 0;
+  font-family: 'Bungee Inline', cursive;
+  color: white;
+}
+
 </style>
 
 
 
 </head>
-<body><center>
+<body style="padding-top:100px;">
+	<nav class="navbar navbar-inverse navbar-fixed-top boxshadowout">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">BLACK GARAGE</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/car/">Find Your Car</a></li>
+					<li class="active"><a href="/car/compare/">Compare</a></li>
+					<li><a href="/car/about/">Contact</a></li>
+					<li><a href="/car/guide/">Buying Guide</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+
+
+
+
+
+
+  <center>
     <table style="padding:50px">
       <div>
 	  <thead>
 	        <tr>
 		        <th id="feature">Features</th>
-			      <th id="ccar"> <img src="{{car2.imageUrl}}" width="100%">{{ car1.name }}</th>
+			      <th id="ccar"> <img src="{{car1.imageUrl}}" width="100%">{{ car1.name }}</th>
 			            <th id="ccar"> <img src="{{car2.imageUrl}}" width="100%">{{ car2.name }}</th>
 				        </tr>
 		  </thead>

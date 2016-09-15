@@ -25,6 +25,8 @@ urlpatterns += patterns('',
     url(r'^compare/(?P<num1>[0-9]+)/(?P<num2>[0-9]+)/$', views.compareresult),
     url(r'^about/$', views.about),
     url(r'^guide/$', views.guide),
+    url(r'^emi/$', views.emi),
+    url(r'^carcost/$', views.carcost),
     url(r'^$', views.cargrid, ),
 )
 

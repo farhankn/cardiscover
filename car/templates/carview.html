@@ -1,33 +1,68 @@
+{% load static %}
 <html>
 <head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--*******************BOOTSTRAP********************************-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
 
 
-	<link rel="stylesheet" href="style.css">
-	<script> src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="custom.js"></script>
+  <!--*******************NAVBAR********************************-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	  <!-- Optional theme -->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-	  <!-- Latest compiled and minified JavaScript -->
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="style.css">
 
 
+
+
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+<style>
+
+.navbar
+{
+  border: 0;
+  font-family: 'Bungee Inline', cursive;
+  color: white;
+}
+
+
+</style>
+
+<title> {{ car.name }} - BlackGarage </title>
 </head>
+
 <body style="padding-top:80px;">
 	<!--*******************NAVBAR********************************-->
 
-  <nav class="navbar navbar-default navbar-fixed-top boxshadowout">
-    <div class="container">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
       <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-              <div>CarFinder <span> <img src="car.gif" height="30px"></span></div>
-            </a>
-          </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">BLACK GARAGE</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/car/">Find Your Car</a></li>
+          <li><a href="/car/compare/">Compare</a></li>
+          <li><a href="/car/about/">Contact</a></li>
+          <li><a href="/car/guide/">Buying Guide</a></li>
+          <li><a href="/car/emi/">EMI Calculator</a></li>
+          <li><a href="/car/carcost/">Car Cost Calculator</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+                <li><a href="/admin/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+
+
+      </div>
     </div>
   </nav>
 <div class="container">
@@ -47,7 +82,7 @@
 <b>
 	<div class="row">
 		<div class="col-sm-3">
-			Milage<br>{{ car.mileage }}
+			Mileage<br>{{ car.mileage }}
 		</div>
 <div class="col-sm-3">
 	Manufacturer<br> {{ car.Manufacturer }}
@@ -67,56 +102,34 @@
 </div>
 <div class="row" style="padding:50px;background-color:grey;">
 <div class="col-sm-6">
-<pre id="myCode"></pre>
+     <h3 style="color:white;">{{ car.name }} Video Review</h3>
+    <a href="{{ car.youtubeurl }}">
+<img src = "http://www.mercanticosanlorenzello.it/wp-content/uploads/2013/12/play.jpg" width="80%"></a>
+
 </div>
-<param name="vid" value="{{ car.youtubeurl }}">
+<div class="col-sm-6">
+<center>
+    <br>
+    <img src="https://www.bankbazaar.com/images/india/infographic/calculate-your-loan-repayment.png" width="40%"><br>
+    <h4></h4>
+    <a href="/car/emi/">
+      <button type="button" class="btn btn-primary">EMI Calculator</button></a>
+       <a href="/car/carcost/">
+      <button type="button" class="btn btn-primary">Car Expense Calculator</button></a>
+</center>
+</div>
+
+</div>
+
 </div>
 </div>
 
 
 
-
-
-
-<!--
-<table>
-Name	{{ car.name }}<br/>
-Slug	{{ car.slug }}<br/>
-Created	{{ car.created }}<br/>
-Last_updated	{{ car.last_updated }}<br/>
-Manufacturer	{{ car.Manufacturer }}<br/>
-Price	{{ car.Price }}<br/>
-Mileage	{{ car.mileage }}<br/>
-Engine	{{ car.engine }}<br/>
-Power	{{ car.power }}<br/>
-
-Description	{{ car.description }}<br/>
-	<a href="{{ car.cardheko }}">cardheko</a><br/>
-	<a href="{{ car.cartrade }}">cartrade</a><br/>
-youtubeurl	{{ car.youtubeurl }}<br/>
-imageUrl:<img src="{{car.imageUrl}}"><br/>
-<table> -->
-
-<script>
-function getId(url) {
-    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-    var match = url.match(regExp);
-
-    if (match && match[2].length == 11) {
-        return match[2];
-    } else {
-        return 'error';
-    }
-}
-
-var myId = getId('vid');
-
-$('#myId').html(myId);
-
-$('#myCode').html('<iframe width="100%" height="300" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe>');
-</script>
 
 
 
 </body>
+
+
 </html>

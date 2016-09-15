@@ -6,32 +6,37 @@ from django.shortcuts import render,render_to_response
 def index(request):
 
     brand = Manufacturer.objects.all()
-    context = { 
-                'brand': brand, 
+    context = {
+                'brand': brand,
             }
     return render(request,"index.html",context)
-                              
+
 
 
 def cardetails(request, num=None):
     instance = carName.objects.get(id = num)
     context = {
      "car" : instance,}
-    return render(request,"carview.html",context) 
+    return render(request,"carview.html",context)
 
 
 def about(request, num=None):
-    return render(request,"about.html") 
+    return render(request,"about.html")
 
 def guide(request, num=None):
-    return render(request,"guide.html") 
+    return render(request,"guide.html")
 
+def emi(request, num=None):
+    return render(request,"emi.html")
+
+def carcost(request, num=None):
+    return render(request,"carcost.html")
 
 def cargrid(request):
     instance = carName.objects.all()
     context = {
      "cars" : instance,}
-    return render(request,"grid.html",context) 
+    return render(request,"grid.html",context)
 
 
 def compare1(request):
@@ -46,7 +51,7 @@ def compare2(request, num1 = None):
     context = {
      "select" : instance1,
      "cars" : instance,}
-    return render(request,"compare2.html",context) 
+    return render(request,"compare2.html",context)
 
 
 def compareresult(request, num1=None, num2=None):
@@ -55,7 +60,7 @@ def compareresult(request, num1=None, num2=None):
     context = {
      "car1" : instance1,
      "car2" : instance2,	}
-    return render(request,"compare.html",context) 
+    return render(request,"compare.html",context)
 
 
 class carNameListView(ListView):
