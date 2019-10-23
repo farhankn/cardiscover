@@ -34,4 +34,4 @@ You will then run project with:
 python manage.py runserver
 ```
 
-It's that simple! Go ahead, try it out!
+It's that simple! Go ahead, try it out!!
