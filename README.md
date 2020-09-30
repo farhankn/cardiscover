@@ -1,7 +1,7 @@
 cardiscover
 ==============
 
-A Django - Bootstrap, AngularJS Project that helps users to buy a car of their choice
+A Django - Bootstrap Project that helps users to buy a car of their choice
 
 Getting started
 ---------------
