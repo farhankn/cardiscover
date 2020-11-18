@@ -34,4 +34,6 @@ You will then run project with:
 python manage.py runserver
 ```
 
+Navigate to http://127.0.0.1:8000/ and you can find the application running. 
+
 It's that simple! Go ahead, try it out!
